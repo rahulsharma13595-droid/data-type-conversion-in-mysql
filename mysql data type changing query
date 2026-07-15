@@ -2,3 +2,6 @@
 UPDATE Transactions SET tran_date = STR_TO_DATE(tran_date, '%d-%m-%Y')
 WHERE tran_date LIKE '%-%';
 
+UPDATE Transactions SET tran_date = STR_TO_DATE(tran_date, '%m/%d/%Y')
+WHERE tran_date LIKE '%/%';
+
