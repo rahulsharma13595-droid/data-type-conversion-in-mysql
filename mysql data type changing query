@@ -5,3 +5,8 @@ WHERE tran_date LIKE '%-%';
 UPDATE Transactions SET tran_date = STR_TO_DATE(tran_date, '%m/%d/%Y')
 WHERE tran_date LIKE '%/%';
 
+ALTER TABLE transactions
+MODIFY COLUMN tran_date date;
+
+UPDATE customer SET DOB = str_to_date(DOB, '%d/%m/%Y')
+WHERE DOB LIKE '%/%';
