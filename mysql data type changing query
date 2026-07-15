@@ -10,3 +10,9 @@ MODIFY COLUMN tran_date date;
 
 UPDATE customer SET DOB = str_to_date(DOB, '%d/%m/%Y')
 WHERE DOB LIKE '%/%';
+
+UPDATE CUSTOMER SET DOB = str_to_date(DOB, '%d-%m-%Y')
+WHERE DOB regexp '^[0-9]{2}-[0-9]{2}-[0-9]{4}$' ;
+
+UPDATE CUSTOMER SET DOB = str_to_date(DOB, '%Y-%m-%d')
+WHERE DOB regexp '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' ;
