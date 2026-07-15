@@ -1,0 +1,4 @@
+# Changing the data type of date column from text to date:
+UPDATE Transactions SET tran_date = STR_TO_DATE(tran_date, '%d-%m-%Y')
+WHERE tran_date LIKE '%-%';
+
